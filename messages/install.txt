@@ -1,0 +1,10 @@
+SublimeLinter-contrib-ansible-lint
+-------------------------------
+This linter plugin for SublimeLinter provides an interface to ansible-lint.
+
+** IMPORTANT! **
+
+Before this plugin will activate, you *must*
+follow the installation instructions here:
+
+https://github.com/mliljedahl/SublimeLinter-contrib-ansible-lint
