@@ -1,0 +1,3 @@
+SublimeLinter-contrib-ansible-lint
+----------------------------------
+Initial release, see README.md for more information.
