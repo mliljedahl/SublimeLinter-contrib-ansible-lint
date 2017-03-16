@@ -68,7 +68,7 @@ To install via Package Control, do the following:
 
 1. When the plugin list appears, type `ansible-lint`. Among the entries you should see `SublimeLinter-contrib-ansible-lint`. If that entry is not highlighted, use the keyboard or mouse to select it.
 
-### Reccomended plugin
+### Recommended plugin
 It is highly recommended to also install the Sublime plugin [Trailing Spaces](https://github.com/SublimeText/TrailingSpaces) by using [Package Control][pc]. And to set the `Trim On Save` option to `true`.
 
 The settings can be found under:
