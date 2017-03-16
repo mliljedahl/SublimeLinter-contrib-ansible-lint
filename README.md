@@ -1,7 +1,7 @@
 SublimeLinter-contrib-ansible-lint
 ==================================
 
-[![Build Status](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-ansible-lint.svg?branch=master)](https://travis-ci.org/SublimeLinter/SublimeLinter-contrib-ansible-lint)
+[![Build Status](https://travis-ci.org/mliljedahl/SublimeLinter-contrib-ansible-lint.svg?branch=master)](https://travis-ci.org/mliljedahl/SublimeLinter-contrib-ansible-lint)
 
 This linter plugin for [SublimeLinter][docs] provides an interface to [ansible-lint](https://github.com/willthames/ansible-lint). It will be used with files that have the “Ansible” syntax.
 
