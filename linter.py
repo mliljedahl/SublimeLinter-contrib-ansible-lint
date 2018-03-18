@@ -22,7 +22,7 @@ class AnsibleLint(Linter):
     version_requirement = '>= 3.0.1'
 
     # linter settings
-    cmd = ('ansible-lint', '${args}', '@')
+    cmd = ('ansible-lint', '${args}', '${file}')
     regex = r'^.+:(?P<line>\d+): \[.(?P<error>.+)\] (?P<message>.+)'
     # -p generate non-multi-line, pep8 compatible output
     multiline = False
