@@ -38,5 +38,10 @@ class AnsibleLint(Linter):
         'selector': 'source.ansible',
         'args': '--nocolor -p',
         '--exclude= +': ['.galaxy'],
+        '-c': '',
+        '-r': '',
+        '-R': '',
+        '-t': '',
+        '-x': '',
     }
-    inline_overrides = ['exclude']
+    inline_overrides = ['c', 'exclude', 'r', 'R', 't', 'x']
