@@ -22,8 +22,8 @@ class AnsibleLint(Linter):
     version_requirement = '>= 3.0.1'
 
     # linter settings
-    cmd = ('ansible-lint', '${args}', '${file}')
-    regex = r'.+:(?P<line>\d+): \[(?P<error>.z+)\] (?P<message>.+)'
+    cmd = ('ansible-lint', '${args}', '@')
+    regex = r'^.+:(?P<line>\d+): \[.(?P<error>.+)\] (?P<message>.+)'
     # -p generate non-multi-line, pep8 compatible output
     multiline = False
 
@@ -33,7 +33,10 @@ class AnsibleLint(Linter):
 
     tempfile_suffix = 'yml'
     error_stream = util.STREAM_STDOUT
+
     defaults = {
         'selector': 'source.ansible',
-        'args': '-p'
+        'args': '--nocolor -p',
+        '--exclude= +': ['.galaxy'],
     }
+    inline_overrides = ['exclude']
