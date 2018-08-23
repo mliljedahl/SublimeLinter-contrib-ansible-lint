@@ -1,6 +1,6 @@
 #
 # linter.py
-# Linter for SublimeLinter3, a code checking framework for Sublime Text 3
+# Linter for SublimeLinter4, a code checking framework for Sublime Text 3
 #
 # Written by Markus Liljedahl
 # Copyright (c) 2017 Markus Liljedahl
@@ -16,26 +16,32 @@ from SublimeLinter.lint import Linter, util
 class AnsibleLint(Linter):
     """Provides an interface to ansible-lint."""
 
-    syntax = 'ansible'
-    cmd = ('ansible-lint', '-p', '--nocolor', '@')
-    executable = None
+    # ansbile-lint verison requirements check
     version_args = '--version'
     version_re = r'(?P<version>\d+\.\d+\.\d+)'
     version_requirement = '>= 3.0.1'
-    regex = r'.+:(?P<line>\d+):.+\] (?P<message>.+)'
-    multiline = True
+
+    # linter settings
+    cmd = ('ansible-lint', '${args}', '${file}')
+    regex = r'^.+:(?P<line>\d+): \[.(?P<error>.+)\] (?P<message>.+)'
+    # -p generate non-multi-line, pep8 compatible output
+    multiline = False
+
+    # ansible-lint does not support column number
+    word_re = False
     line_col_base = (1, 1)
+
     tempfile_suffix = 'yml'
     error_stream = util.STREAM_STDOUT
-    selectors = {}
-    word_re = None
+
     defaults = {
-        '-r:,': '',
-        '-R:,': '',
-        '-t:,': '',
-        '-x:,': '',
-        '--exclude=,': ''
+        'selector': 'source.ansible',
+        'args': '--nocolor -p',
+        '--exclude= +': ['.galaxy'],
+        '-c': '',
+        '-r': '',
+        '-R': '',
+        '-t': '',
+        '-x': '',
     }
-    inline_settings = ('r', 'R', 't', 'x', 'exclude')
-    inline_overrides = ('r', 'R', 't', 'x', 'exclude')
-    comment_re = r'\s*#'
+    inline_overrides = ['c', 'exclude', 'r', 'R', 't', 'x']
