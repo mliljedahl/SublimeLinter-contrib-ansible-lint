@@ -16,11 +16,6 @@ from SublimeLinter.lint import Linter, util
 class AnsibleLint(Linter):
     """Provides an interface to ansible-lint."""
 
-    # ansbile-lint verison requirements check
-    version_args = '--version'
-    version_re = r'(?P<version>\d+\.\d+\.\d+)'
-    version_requirement = '>= 3.0.1'
-
     # linter settings
     cmd = ('ansible-lint', '${args}', '${file}')
     regex = r'^.+:(?P<line>\d+): \[.(?P<error>.+)\] (?P<message>.+)'
@@ -44,4 +39,3 @@ class AnsibleLint(Linter):
         '-t': '',
         '-x': '',
     }
-    inline_overrides = ['c', 'exclude', 'r', 'R', 't', 'x']
