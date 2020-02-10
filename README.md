@@ -136,6 +136,5 @@ Thank you for helping out!
 [inline-settings]: http://sublimelinter.readthedocs.org/en/latest/settings.html#inline-settings
 
 ### Thanks for contributing!
-jeffbyrnes
-Boulet-
+jeffbyrnes, Boulet-
 
