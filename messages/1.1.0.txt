@@ -1,0 +1,4 @@
+SublimeLinter-contrib-ansible-lint
+----------------------------------
+Moved from version 3 of SublimeLinter to version 4. See README.md for more
+information.
