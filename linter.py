@@ -47,6 +47,7 @@ class AnsibleLint(Linter):
     }
 
     def __init__(self, view, settings):
+        """If it uses Ansible Lint 5 will be updated the regex."""
         super(AnsibleLint, self).__init__(view, settings)
 
         # Must be resolved the path of Ansible Lint and Ansible if you'd like to use Ansible Lint 5.
@@ -62,7 +63,7 @@ class AnsibleLint(Linter):
             proc = subprocess.Popen(['ansible-lint', '--version'], env=env, stdout=PIPE, stdin=PIPE)
             result = proc.communicate()[0].decode('utf-8')
             ansible_version = re.findall(r'ansible-lint (\d+.\d+.\d+)', result)[0]
-        except:
+        except Exception:
             ansible_version = None
 
         # regex to re-set if Ansible Lint version is 5 or more
